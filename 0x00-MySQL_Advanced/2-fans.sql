@@ -5,7 +5,7 @@ SELECT
 	SUM(fans) AS nb_fans 
 FROM 
 	metal_bands 
-GROUPBY 
+GROUP BY 
 	origin
-ORDERBY 
+ORDER BY 
 	nb_fans DESC;
