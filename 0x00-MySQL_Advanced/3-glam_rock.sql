@@ -8,6 +8,6 @@ FROM
 WHERE 
 	style 
 LIKE 
-	'%$Glam rock%' 
+	'%Glam rock%' 
 ORDER BY 
 	lifespan DESC;
