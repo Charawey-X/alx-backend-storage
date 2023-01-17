@@ -8,4 +8,4 @@ FROM
 GROUPBY 
 	origin
 ORDERBY 
-	nb_fans;
+	nb_fans DESC;
