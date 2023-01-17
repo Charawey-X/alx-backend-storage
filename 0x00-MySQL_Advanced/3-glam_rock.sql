@@ -2,7 +2,7 @@
 
 SELECT 
 	band_name, 
-	(IFNULL(formed, 0) - IFNULL(split, 0)) AS lifespan
+	(formed - IFNULL(split, 0)) AS lifespan
 FROM 
 	metal_bands 
 WHERE 
