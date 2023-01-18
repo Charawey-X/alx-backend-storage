@@ -6,11 +6,10 @@ RETURNS INT
 BEGIN
 	DECLARE result INT;
 	SET result = IFNULL(b, 0);
-	IF result = 0
+	IF result != 0
 	THEN
-		return 0;
-	ELSE
-		return a / b;
+		result = a / result;
 	END IF;
+	RETURN result;
 END $$
 DELIMITER ;
