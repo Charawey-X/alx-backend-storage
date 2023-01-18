@@ -4,15 +4,11 @@ DELIMITER $$
 CREATE FUNCTION SafeDiv(a INT, b INT) 
 RETURNS INT 
 BEGIN
-	DECLARE result INT;
-	DECLARE c INT;
-	SET c = IFNULL(b, 0);
-	IF c != 0
+	IF b = 0
 	THEN
-		result = a / c;
+		RETURN (0);
 	ELSE 
-		result = c;
+		RETURN (a / b);
 	END IF;
-	RETURN result;
 END $$
 DELIMITER ;
