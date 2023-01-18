@@ -8,9 +8,8 @@ BEGIN
 	SET @exists = EXISTS(SELECT id FROM projects WHERE name = project_name);
 	IF (@exists = 0) 
 		INSERT INTO projects(name) VALUES(project_name);
-	ELSE 
-		SET @project_id = SELECT id FROM projects WHERE name = project_name LIMIT 1;
 	END IF;
+	SET @project_id = SELECT id FROM projects WHERE name = project_name LIMIT 1;
 	INSERT INTO corrections(user_id, project_id, score) 
 	VALUES(user_id, @project_id, score);
 END //
