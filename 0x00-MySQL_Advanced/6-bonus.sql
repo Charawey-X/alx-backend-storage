@@ -4,9 +4,12 @@ DELIMITER //
 CREATE PROCEDURE AddBonus(IN user_id INT, IN project_name VARCHAR(255), IN score INT)
 BEGIN 
 	DECLARE @project_id INT;
-	SET @project_id = (SELECT id FROM projects WHERE name = project_name);
-	IF (@project_id = NULL) 
+	DECLARE @exists INT;
+	SET @exists = EXISTS(SELECT id FROM projects WHERE name = project_name);
+	IF (@exists = 0) 
 		INSERT INTO projects(name) VALUES(project_name);
+	ELSE 
+		SET @project_id = SELECT id FROM projects WHERE name = project_name LIMIT 1;
 	END IF;
 	INSERT INTO corrections(user_id, project_id, score) 
 	VALUES(user_id, @project_id, score);
