@@ -5,10 +5,13 @@ CREATE FUNCTION SafeDiv(a INT, b INT)
 RETURNS INT 
 BEGIN
 	DECLARE result INT;
-	SET result = IFNULL(b, 0);
-	IF result != 0
+	DECLARE c INT;
+	SET c = IFNULL(b, 0);
+	IF c != 0
 	THEN
-		result = a / result;
+		result = a / c;
+	ELSE 
+		result = c;
 	END IF;
 	RETURN result;
 END $$
