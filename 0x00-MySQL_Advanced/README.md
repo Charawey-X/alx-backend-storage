@@ -105,7 +105,7 @@ Tips:
 
 13. Write a SQL script that creates a stored procedure ComputeAverageWeightedScoreForUsers that computes and store the average weighted score for all students. Requirements:
 
-    Procedure ComputeAverageWeightedScoreForUsers is not taking any input.Tips:
+    Procedure ComputeAverageWeightedScoreForUsers is not taking any input. Tips:
 
     [Calculate-Weighted-Average](https://www.wikihow.com/Calculate-Weighted-Average)
 
