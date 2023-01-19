@@ -7,7 +7,7 @@ BEGIN
 	DECLARE total_weight INT;
 	SET total_weight = (SELECT SUM(weight) FROM projects);
 	SET weighted_average = (
-		SELECT SUM(X.score * X.weight)/total_weight FROM (
+		SELECT SUM(score * weight)/total_weight FROM (
 			SELECT C.project_id AS project_id, C.score AS score, 
 		        P.weight AS weight FROM corrections as C 
 			JOIN projects AS P ON P.id = C.project_id 
