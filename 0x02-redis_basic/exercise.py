@@ -86,4 +86,3 @@ class Cache:
     def get_int(self, data: str) -> int:
         """ return the decoded byte in integer """
         return int(data)
-        
